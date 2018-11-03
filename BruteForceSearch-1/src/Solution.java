@@ -25,32 +25,19 @@ public class Solution {
         Queue<Integer> q1 = new LinkedList<Integer>();
         Queue<Integer> q2 = new LinkedList<Integer>();
         Queue<Integer> q3 = new LinkedList<Integer>();
-        
-        q1.add(1);
-        q1.add(2);
-        q1.add(3);
-        q1.add(4);
-        q1.add(5);
-        
-        q2.add(2);
-        q2.add(1);
-        q2.add(2);
-        q2.add(3);
-        q2.add(2);
-        q2.add(4);
-        q2.add(2);
-        q2.add(5);
-        
-        q3.add(3);
-        q3.add(3);
-        q3.add(1);
-        q3.add(1);
-        q3.add(2);
-        q3.add(2);
-        q3.add(4);
-        q3.add(4);
-        q3.add(5);
-        q3.add(5);
+
+        int [] ans_q1 = {1, 2, 3, 4, 5};
+        int [] ans_q2 = {2, 1, 2, 3, 2, 4, 2, 5};
+        int [] ans_q3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
+
+        for (int i=0;i<ans_q1.length;i++)
+            q1.add(ans_q1[i]);
+
+        for (int i=0;i<ans_q2.length;i++)
+            q2.add(ans_q2[i]);
+            
+        for (int i=0;i<ans_q3.length;i++)
+            q3.add(ans_q3[i]);
         
         for (int i=0;i<answers.length;i++) {
         	int temp1 = q1.poll();
@@ -79,7 +66,7 @@ public class Solution {
         // 최대값을 구함, 만일 최대값이 여러개인 경우 오름차순으로 반환
         
         int max = Math.max(array[0], Math.max(array[1], array[2]));
-        
+
         for (int i=0;i<3;i++) {
         	if (max == array[i]) {
         		arr.add(i+1);
